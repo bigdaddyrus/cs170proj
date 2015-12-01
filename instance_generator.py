@@ -23,11 +23,10 @@ def generate_instance(size, filename, seed=0.5):
 				fout.write("0")
 			else:
 				x = random.uniform(0, 1)
-				if x <= seed:
-					edge = lst[1]
+				if x <= float(seed):
+					fout.write("1")
 				else:
-					edge = lst[0]
-				fout.write(str(edge))
+					fout.write("0")
 			if j == (N - 1):
 				fout.write("\n")
 			else:
