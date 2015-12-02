@@ -8,7 +8,6 @@ def main(argv):
         print generate_instance(argv[0], argv[1], argv[2])
 
 def generate_instance(size, filename, seed=0.5):
-	lst = [0, 1]
 	N = int(size)
 	if N < 1 or N > 100:
 		return "N must be an integer between 1 and 100, inclusive."
