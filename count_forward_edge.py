@@ -17,11 +17,10 @@ def countForwardEdge(solution_list, list_vertex):
 	i = 0
 	k = 1
 	for k in xrange(len(solution_list)):
-		if i >= k:
-			k = i + 1
-		if i > len(solution_list):
-			break
-		if solution_list[k] in list_vertex[i].out_vertices
-			count += 1
-			k += 1
-		i += 1
+		for i in xrange(len(solution_list)):
+			if i >= k:
+				k = i + 1
+			if solution_list[k] in list_vertex[i].out_vertices
+				count += 1
+				k += 1
+			i += 1
