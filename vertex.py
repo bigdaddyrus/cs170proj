@@ -23,6 +23,12 @@ class Vertex:
     def add_outdegree(self):
         self.outdegree += 1
 
+    def sub_indegree(self):
+        self.indegree -= 1
+
+    def sub_outdegree(self):
+        self.outdegree -= 1
+
     def get_out_vertex(self):
         return self.out_vertices
 
@@ -37,3 +43,12 @@ class Vertex:
         self.out_vertices.append(vertex)
         vertex.add_in_vertices(self)
         self.add_outdegree()
+
+    def remove_out_vertex(self, vertex):
+        self.out_vertices.remove(vertex)
+        vertex.remove_in_vertex(self)
+        self.sub_outdegree()
+
+    def remove_in_vertex(self, vertex):
+        self.in_vertices.remove(vertex)
+        self.sub_indegree()
