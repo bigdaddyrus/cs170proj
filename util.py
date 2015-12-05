@@ -31,3 +31,17 @@ def write_all_results(result_lists, outputfile):
 				fout.write(" ")
 	fout.close()
 
+class Vertex(Object):
+	def __init__(self, index):
+    	self.index = index
+		self.indegree = 0
+		self.outdegree = 0
+		self.out_vertices = []
+		self.in_vertices = []
+
+	def add_in_vertices(self, vertex):
+		self.in_vertices += vertex
+
+
+	def add_out_vertices(self, vertex):
+		self.out_vertices += vertex
