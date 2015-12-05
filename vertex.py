@@ -30,10 +30,10 @@ class Vertex:
         return self.in_vertices
 
     def add_in_vertices(self, vertex):
-        self.in_vertices += vertex
+        self.in_vertices.append(vertex)
         self.add_indegree()
 
     def add_out_vertices(self, vertex):
-        self.out_vertices += vertex
+        self.out_vertices.append(vertex)
         vertex.add_in_vertices(self)
         self.add_outdegree()

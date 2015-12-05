@@ -35,8 +35,8 @@ def algo_one(vertices, size):
     result = [i for i in xrange(size)]
     for i in xrange(size):
         v = vertices[i]
-        indegree = v.get_indegree
-        outdegree = v.get_outdegree
+        indegree = v.get_indegree()
+        outdegree = v.get_outdegree()
         if indegree <= outdegree:
             result[l] = v
             l += 1
@@ -45,9 +45,8 @@ def algo_one(vertices, size):
             u -= 1
         if u < l:
             break
-    rank_of_nodes = map(lambda x: x.get_index, result)
+    rank_of_nodes = map(lambda x: (x.get_index()), result)
     return rank_of_nodes
 
 def algo_two(vertices, size):
-
 	return []
