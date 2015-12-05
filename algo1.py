@@ -28,7 +28,7 @@ def solving_through_algo1(vertices):
     			v.out_vertices.remove(vertices[i])    		
     		vertices[i].indegree = None
     		vertices.indegree = 0
-    sort(vertices, key = vertices.indegree)
+    sort(vertices, key = vertices.outdegree)
     return vertices
     
     
