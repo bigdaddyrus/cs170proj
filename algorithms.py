@@ -43,5 +43,18 @@ def write_result(result_list, outputfile):
 	fout.close()
 
 
+def write_all_results(result_lists, outputfile):
+	fout = open(outputfile, "w")
+	for result_list in result_lists:
+		length = len(result_list)
+		for i in xrange(length):
+			fout.write(str(result_list[i]))
+			if i == length - 1:
+				fout.write("\n")
+			else:
+				fout.write(" ")
+	fout.close()
+
+
 if __name__ == '__main__':
 	main(sys.argv[1:])
