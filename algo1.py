@@ -28,7 +28,7 @@ def solving_through_algo1(vertices):
     			v.out_vertices.remove(vertices[i])    		
     		vertices[i].indegree = None
     		vertices.indegree = 0
-    sort(vertices, key = vertices.indegree)
+    sort(vertices, key = vertices.outdegree)
     return vertices
     
     
@@ -47,4 +47,20 @@ class Vertex(object):
 
 	 def add_out_vertices(self, vertex):
 	 	self.out_vertices += vertex
+
+def solving_through_kruskal(vertices):
+	result = []
+	l = 1
+	u = size 
+    for i in range(size):
+    	while u != l:	
+    		if vertices[i].indegree > vertices[i].outdegree:
+    			result.append(vertices[i])
+    			u -= 1
+    		else:
+    			result.append(vertices[i])
+    			l += 1
+
+    return result
+    
 
