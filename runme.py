@@ -11,7 +11,7 @@ def main(argv):
 		fin.close()
 		v = parse_matrix_to_vertices(m, length)
 		# We can change different algorithms though next line
-		solution = local_search(length, m)
+		solution = brute_force(length, m)
 		print (solution)
 		l = len(solution)
 		for j in xrange(l):
@@ -124,7 +124,7 @@ def remove_two_cycles(vertices):
                 v.remove_out_vertex(k)
                 k.remove_out_vertex(v)
 
-def permute(size, matrix):
+def brute_force(size, matrix):
 	vertices = [i+1 for i in xrange(size)]
 	def permutation(v, i=0):
 		if i + 1 >= len(v):
