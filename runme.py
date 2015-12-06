@@ -124,7 +124,7 @@ def remove_two_cycles(vertices):
                 v.remove_out_vertex(k)
                 k.remove_out_vertex(v)
 
-def local_search(size, matrix):
+def permute(size, matrix):
 	vertices = [i+1 for i in xrange(size)]
 	def permutation(v, i=0):
 		if i + 1 >= len(v):
@@ -154,7 +154,6 @@ def local_search(size, matrix):
 		if count > best_score:
 			best_score = count
 			result = sol
-		print result
 
 	return result
 
