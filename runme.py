@@ -11,7 +11,7 @@ def main(argv):
 		fin.close()
 		v = parse_matrix_to_vertices(m, length)
 		# We can change different algorithms though next line
-		solution = brute_force(length, m)
+		solution = sort_by_difference(length, v)
 		print (solution)
 		l = len(solution)
 		for j in xrange(l):
@@ -156,6 +156,14 @@ def brute_force(size, matrix):
 			result = sol
 
 	return result
+
+def sort_by_difference(size, vertices):
+	weight = []
+	for i in range(size):
+		v= vertices[i] 
+		weight.append((v, v.outdegree - v.indegree))
+		weight.sort(key=lambda x : -x[1])
+	return[i.get_index() for (i,j) in weight]
 
 
 
