@@ -77,3 +77,20 @@ def count_forward_edge_matrix(result, d):
             if d[ans[i]][ans[j]] == 1:
                 count += 1
     return count
+
+def count_forward_edge_matrix_score(result, d):
+    ans = map(lambda x: (int(x) - 1), result)
+    N = len(ans)
+    e = 0
+    for i in xrange(N):
+        e += sum(d[i])
+
+    count = 0.0
+
+    for i in xrange(N):
+        for j in xrange(i + 1, N):
+            if d[ans[i]][ans[j]] == 1:
+                count += 1
+    if e == 0:
+        return count, 0.0
+    return count, (count/e)

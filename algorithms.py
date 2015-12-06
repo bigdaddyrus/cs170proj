@@ -111,7 +111,15 @@ def algo_two(original, size, matrix):
     if s1_f_edge >= s2_f_edge:
         return s1
     return s2
-
+#
+# def remove_two_cycles(vertices):
+#     size = len(vertices)
+#     for i in xrange(size):
+#         v = vertices[i]
+#         for k in v.get_out_vertex():
+#             if k in v.get_in_vertex():
+#                 v.remove_out_vertex(k)
+#
 def remove_two_cycles(vertices):
     size = len(vertices)
     for i in xrange(size):
@@ -119,6 +127,7 @@ def remove_two_cycles(vertices):
         for k in v.get_out_vertex():
             if k in v.get_in_vertex():
                 v.remove_out_vertex(k)
+                k.remove_out_vertex(v)
 
 # To be completed
 def local_search(solution, k):
